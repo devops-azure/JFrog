@@ -1,0 +1,19 @@
+version: "2"
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./nginx:/etc/nginx/
+
+  jfrog:
+    image: docker.bintray.io/jfrog/artifactory-pro:latest
+#    volumes:
+#      - ./jfrog-data:/sonatype-work
+    ports:
+      - "8081:8081" #for jfrog
+  #    - "5000:5000" #for registry in nexus
+  
+#volumes:
+#  nexus-data: {}
